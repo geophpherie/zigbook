@@ -39,21 +39,21 @@ export default function Navbar({ chapters = [], currentChapterId }: NavbarProps)
   return (
     <>
       {/* Main Navbar */}
-      <div className="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+      <div className="navbar bg-base-100 shadow-lg sticky top-0 z-50 px-2 sm:px-4">
         <div className="flex-none lg:hidden">
           <label 
             htmlFor="nav-drawer" 
-            className="btn btn-ghost btn-circle"
+            className="btn btn-ghost btn-sm btn-circle"
             aria-label="Open menu"
           >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </label>
         </div>
         
-        <div className="flex-1">
-          <Link href="/" className="btn btn-ghost text-xl font-bold">
+        <div className="flex-1 min-w-0">
+          <Link href="/" className="btn btn-ghost text-base sm:text-lg md:text-xl font-bold px-2 sm:px-4">
             Zigbook
           </Link>
           {currentChapter && (
@@ -171,9 +171,9 @@ export default function Navbar({ chapters = [], currentChapterId }: NavbarProps)
         <input id="nav-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-side z-40">
           <label htmlFor="nav-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-          <aside className="menu bg-base-100 min-h-full w-80 p-4">
+          <aside className="menu bg-base-100 min-h-full w-[85vw] max-w-sm p-4 overflow-y-auto">
             <div className="mb-4 flex justify-between items-center">
-              <Link href="/" className="text-xl font-bold">Zigbook</Link>
+              <Link href="/" className="text-lg sm:text-xl font-bold">Zigbook</Link>
               <label htmlFor="nav-drawer" className="btn btn-ghost btn-sm btn-circle">✕</label>
             </div>
             
@@ -210,11 +210,11 @@ export default function Navbar({ chapters = [], currentChapterId }: NavbarProps)
               </label>
             </div>
 
-            <ul className="menu-md gap-1 mt-2">
+            <ul className="menu-md gap-1 mt-2 overflow-y-auto">
               {filteredChapters.map((chapter) => {
                 const isActive = currentChapterId === chapter.id
                 const baseItem =
-                  'flex items-center gap-3 rounded-lg px-2 py-2 text-sm transition-all duration-150 ease-out border'
+                  'flex items-center gap-2 sm:gap-3 rounded-lg px-2 py-2 text-xs sm:text-sm transition-all duration-150 ease-out border'
                 const activeItem =
                   'bg-base-100/20 border-accent/60 shadow-[0_6px_18px_rgba(0,0,0,0.3)]'
                 const inactiveItem =
@@ -231,13 +231,13 @@ export default function Navbar({ chapters = [], currentChapterId }: NavbarProps)
                       }}
                     >
                       <span
-                        className={`badge badge-sm ${
+                        className={`badge badge-xs sm:badge-sm shrink-0 ${
                           isActive ? 'badge-primary' : 'badge-neutral'
                         }`}
                       >
                         {chapter.number}
                       </span>
-                      <span className="flex-1 truncate text-sm text-base-content">
+                      <span className="flex-1 truncate text-xs sm:text-sm text-base-content min-w-0">
                         {chapter.title}
                       </span>
                     </Link>
