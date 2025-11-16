@@ -102,6 +102,22 @@ code[class*="language-"] {
   @apply text-accent;
 }
 
+/* Fix interaction between Prism's `token.label` and global `.label` utility classes
+   from component libraries (e.g. DaisyUI). Without this, some code tokens that
+   use the `label` token type can be laid out as flex containers, which mangles
+   code formatting for some users. Restrict `.label` overrides inside code blocks
+   so those tokens render like normal inline text. */
+pre[class*="language-"] .token.label,
+code[class*="language-"] .token.label {
+  display: inline;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+          user-select: text;
+  align-items: initial;
+  justify-content: initial;
+  padding: 0;
+}
+
 /* Inline code */
 :not(pre)>code {
   @apply font-mono text-xs px-1.5 py-0.5 rounded-md bg-base-300/60 text-base-content;
