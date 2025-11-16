@@ -23,15 +23,19 @@
     min-width: 100%;
   }
   
-  * {
-    max-width: 100%;
-  }
-  
   /* Prevent any element from creating horizontal scroll */
   *,
   *::before,
   *::after {
     box-sizing: border-box;
+  }
+  
+  /* Apply max-width constraint only to direct children of main layout containers, not dropdowns */
+  body > div,
+  main > *,
+  section > *,
+  article > * {
+    max-width: 100%;
   }
 }
 
