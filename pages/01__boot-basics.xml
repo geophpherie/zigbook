@@ -37,7 +37,7 @@
 </chapter>
 <chapter xml:id="_entry_point_selection">
 <title>Entry Point Selection</title>
-<simpara>The Zig compiler exports different entry point symbols based on the target platform, linking mode, and user declarations. This selection happens at compile time in <link xl:href="">lib/std/start.zig:28-100</link>.</simpara>
+<simpara>The Zig compiler exports different entry point symbols based on the target platform, linking mode, and user declarations. This selection happens at compile time in <link xl:href="https://github.com/ziglang/zig/blob/master/lib/std/start.zig#L28-104">lib/std/start.zig:28-104</link>.</simpara>
 <section xml:id="_entry_point_symbol_table">
 <title>Entry Point Symbol Table</title>
 <informaltable frame="all" rowsep="1" colsep="1">
