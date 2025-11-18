@@ -96,7 +96,7 @@ IMPORTANT: The Zigbook intentionally contains *no* AI-generated content—it is 
 
 The Zigbook was initially written by link:https://github.com/zigbook[@zigbook], an experienced Systems programmer and Zig community member to fill gaps in the existing resources, and share that knowledge with others. 
 
-It has since grown into a a comprehensive guide to the Zig programming language, structured as a journey from fundamentals to advanced systems programming. It is designed for developers who want to *understand*, not just use; who value transparency over magic and precision over convenience.  
+It has since grown into a comprehensive guide to the Zig programming language, structured as a journey from fundamentals to advanced systems programming. It is designed for developers who want to *understand*, not just use; who value transparency over magic and precision over convenience.  
 
 TIP: The Zigbook complements the official documentation by providing in-depth explanations, practical projects, and a curated learning path. Where the language reference tells you *what* a feature does, this book shows you *when* to use it, *why* it matters, and *how* it fits into real-world code.
 
