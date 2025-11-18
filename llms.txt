@@ -4,7 +4,7 @@ project: Zigbook – The Zig Programming Language Book
 url: https://zigbook.net
 repository: https://github.com/zigbook/zigbook
 license: MIT (see LICENSE in repository)
-generated_at: 2025-11-17T13:18:51.624Z
+generated_at: 2025-11-18T09:07:27.315Z
 zig_version: 0.15.2
 
 notes:
@@ -130,7 +130,7 @@ $ zig version
 ```
 
 CAUTION:
-If `zig version` reports an earlier release, revisit the download step so the examples in forthcoming chapters align with the safety-mode behavior introduced in v0.15.2+ (https://ziglang.org/download/0.15.0/release-notes.html).
+If `zig version` reports an earlier release, revisit the download step so the examples in forthcoming chapters align with the safety-mode behavior introduced in v0.15.2+ (https://ziglang.org/download/0.15.1/release-notes.html).
 
 ### Subsection: Your First Program
 [section_id: getting-started-first-program]
@@ -254,7 +254,7 @@ The fastest way to get something on screen in Zig is to lean on the default modu
 [section_id: _entry_point_selection]
 [section_url: https://zigbook.net/chapters/01__boot-basics#_entry_point_selection]
 
-The Zig compiler exports different entry point symbols based on the target platform, linking mode, and user declarations. This selection happens at compile time in lib/std/start.zig:28-100.
+The Zig compiler exports different entry point symbols based on the target platform, linking mode, and user declarations. This selection happens at compile time in lib/std/start.zig:28-104 (https://github.com/ziglang/zig/blob/master/lib/std/start.zig#L28-104).
 
 ### Subsection: Entry Point Symbol Table
 [section_id: _entry_point_symbol_table]
@@ -895,7 +895,7 @@ const std = @import("std");
 /// Searches for the first row where both elements are even numbers.
 /// Uses a while loop with continue statements to skip invalid rows.
 /// Returns the zero-based index of the matching row, or null if none found.
-fn findAllEvenPair(rows: []const [2]i32) ?usize {
+fn findFirstEvenPair(rows: []const [2]i32) ?usize {
     // Track current row index during iteration
     var row: usize = 0;
     // while-else construct: break provides value, else provides fallback
@@ -922,7 +922,7 @@ pub fn main() !void {
     };
 
     // Search for first all-even pair and report result
-    if (findAllEvenPair(&grid)) |row| {
+    if (findFirstEvenPair(&grid)) |row| {
         std.debug.print("first all-even row: {d}\n", .{row});
     } else {
         std.debug.print("no all-even rows\n", .{});

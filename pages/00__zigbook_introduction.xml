@@ -117,7 +117,7 @@ Edsger W. Dijkstra
 <programlisting language="shell" linenumbering="unnumbered">$ zig version
 0.15.X</programlisting>
 <caution>
-<simpara>If <literal>zig version</literal> reports an earlier release, revisit the download step so the examples in forthcoming chapters align with the safety-mode behavior introduced in <link xl:href="https://ziglang.org/download/0.15.0/release-notes.html">v0.15.2+</link>.</simpara>
+<simpara>If <literal>zig version</literal> reports an earlier release, revisit the download step so the examples in forthcoming chapters align with the safety-mode behavior introduced in <link xl:href="https://ziglang.org/download/0.15.1/release-notes.html">v0.15.2+</link>.</simpara>
 </caution>
 <section xml:id="getting-started-first-program">
 <title>Your First Program</title>
