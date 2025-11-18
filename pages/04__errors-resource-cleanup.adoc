@@ -289,17 +289,16 @@ graph TB
     
     subgraph "Success Path"
         SUCCESS["Work succeeds"]
-        DEFER_C["Step 3: Run cleanup_C()"]
-        DEFER_B["Step 2: Run cleanup_B()"]
-        DEFER_A["Step 1: Run cleanup_A()"]
+        DEFER_B["Run cleanup_B() (defer)"]
+        DEFER_A["Run cleanup_A() (defer)"]
         RETURN_OK["Return success"]
     end
     
     subgraph "Error Path"
         ERROR["Work errors"]
-        ERRDEFER_C["Step 3: Run cleanup_C() via errdefer"]
-        ERRDEFER_B["Step 2: Run cleanup_B() via defer"]
-        ERRDEFER_A["Step 1: Run cleanup_A() via defer"]
+        ERRDEFER_C["Run cleanup_C() (errdefer)"]
+        ERRDEFER_B["Run cleanup_B() (defer)"]
+        ERRDEFER_A["Run cleanup_A() (defer)"]
         RETURN_ERR["Return error"]
     end
     
@@ -311,8 +310,7 @@ graph TB
     WORK -->|"success"| SUCCESS
     WORK -->|"error"| ERROR
     
-    SUCCESS --> DEFER_C
-    DEFER_C --> DEFER_B
+    SUCCESS --> DEFER_B
     DEFER_B --> DEFER_A
     DEFER_A --> RETURN_OK
     
