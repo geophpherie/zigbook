@@ -57,7 +57,7 @@ The fastest way to get something on screen in Zig is to lean on the default modu
 
 == Entry Point Selection
 
-The Zig compiler exports different entry point symbols based on the target platform, linking mode, and user declarations. This selection happens at compile time in link:[lib/std/start.zig:28-100].
+The Zig compiler exports different entry point symbols based on the target platform, linking mode, and user declarations. This selection happens at compile time in link:[https://github.com/ziglang/zig/blob/master/lib/std/start.zig#L28-104].
 
 === Entry Point Symbol Table
 
